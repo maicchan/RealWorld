@@ -89,6 +89,6 @@ class Api::ArticlesController < ApplicationController
   end
 
   def article_json(article)
-    { article: article.as_json(only: :id) }
+    article.as_json(only: [:slug, :title, :description, :body, :created_at, :updated_at])
   end
 end
